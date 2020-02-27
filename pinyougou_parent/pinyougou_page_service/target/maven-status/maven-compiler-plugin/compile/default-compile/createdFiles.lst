@@ -1,0 +1,3 @@
+com\pinyougou\page\service\impl\PageServiceImpl.class
+com\pinyougou\page\listener\AddItemPageMessageListener.class
+com\pinyougou\page\listener\DeleItemPageMessageListener.class

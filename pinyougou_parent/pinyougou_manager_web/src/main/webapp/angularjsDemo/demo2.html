@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs入门demo之数据双向绑定</title>
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+</head>
+<!--ng-app 定义模块，作用：定义angularjs作用范围-->
+<body ng-app>
+        <!--ng-model绑定模式数据-->
+        用户名：<input type="text" ng-model="name" ><br>
+        <!--表达式 {{}} 可以做运算：算数运算、逻辑运算等  作用：用户展示模型数据中的封装的值-->
+        {{name}}
+</body>
+</html>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cas_Demo2:war">
+    <output-path>$PROJECT_DIR$/../cas_Demo2/target</output-path>
+    <root id="archive" name="cas_Demo2-1.0.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="cas_Demo2:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs入门demo之内置的服务</title>
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+
+    <script type="text/javascript">
+        //初始化定义模块
+        //参数一 ：定义的模块名称 参数二：依赖的其他模块，如果没有依赖其他模块时，也需要定义空数组[]
+        var app = angular.module("myapp",[]);
+        //定义控制器，需要先初始化模块
+        //参数一：控制器名称  参数二：控制器要处理的事情
+        //$scope angularjs内置对象 可以理解为全局的作用对象，可以应用在js和html代码 ，相当于js代码和html代码交换的桥梁
+        //$http内置服务，发起ajax请求
+        app.controller("myctrl",function ($scope,$http) {
+            //查询所有品牌列表
+            $scope.findAll=function () {
+                //发起get请求，success是请求成功后回调函数
+                $http.get("../brand/findAll.do").success(
+                    //function中的参数就是返回值
+                    function (response) {
+                        $scope.list=response;
+                    }
+                );
+            }
+
+        });
+    </script>
+
+
+
+</head>
+<!--ng-app 声明模块，作用：定义angularjs作用范围-->
+<body ng-app="myapp" ng-controller="myctrl" ng-init="findAll()" >
+   <table>
+       <tr>
+           <th>品牌id</th>
+           <th>品牌名称</th>
+           <th>品牌首字母</th>
+       </tr>
+       <!--ng-repeat 遍历的指令 -->
+       <tr ng-repeat="brand in list">
+           <td>{{brand.id}}</td>
+           <td>{{brand.name}}</td>
+           <td>{{brand.firstChar}}</td>
+       </tr>
+   </table>
+
+</body>
+</html>

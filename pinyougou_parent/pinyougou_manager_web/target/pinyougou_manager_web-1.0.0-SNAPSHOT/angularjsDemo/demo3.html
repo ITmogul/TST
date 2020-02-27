@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>angularjs入门demo之控制器和mvc模式</title>
+    <script type="text/javascript" src="../plugins/angularjs/angular.min.js"></script>
+
+    <script type="text/javascript">
+        //初始化定义模块
+        //参数一 ：定义的模块名称 参数二：依赖的其他模块，如果没有依赖其他模块时，也需要定义空数组[]
+        var app = angular.module("myapp",[]);
+        //定义控制器，需要先初始化模块
+        //参数一：控制器名称  参数二：控制器要处理的事情
+        //$scope angularjs内置对象 可以理解为全局的作用对象，可以应用在js和html代码 ，相当于js代码和html代码交换的桥梁
+        app.controller("myctrl",function ($scope) {
+            $scope.name="zhangsan";
+        });
+    </script>
+
+
+
+</head>
+<!--ng-app 声明模块，作用：定义angularjs作用范围-->
+<body ng-app="myapp" ng-controller="myctrl">
+        <!--ng-model绑定模式数据-->
+        用户名：<input type="text" ng-model="name" ><br>
+        <!--表达式 {{}} 可以做运算：算数运算、逻辑运算等  作用：用户展示模型数据中的封装的值-->
+        {{name}}
+</body>
+</html>
